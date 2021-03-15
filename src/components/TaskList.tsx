@@ -37,7 +37,7 @@ export function TaskList() {
 
     } else {
       addToast("Por favor, coloque um título na tarefa para adicioná-la à lista.", {
-        appearance: 'error',
+        appearance: 'warning',
         autoDismiss: true,
       })
     }
