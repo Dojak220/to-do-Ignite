@@ -1,13 +1,8 @@
 import { useState } from "react"
-import { useToasts } from 'react-toast-notifications'
-
 
 import "../styles/tasklist.scss"
 
 import { FiTrash, FiCheckSquare } from "react-icons/fi"
-// import { ConfirmationModal } from "./ConfirmationModal";
-
-
 
 interface Task {
   id: number;
@@ -18,9 +13,6 @@ interface Task {
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState("");
-  // const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
-
-  const { addToast } = useToasts()
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
@@ -32,14 +24,10 @@ export function TaskList() {
       }
 
       setTasks([...tasks, newTask]);
-
       setNewTaskTitle("");
 
     } else {
-      addToast("Por favor, coloque um título na tarefa para adicioná-la à lista.", {
-        appearance: 'error',
-        autoDismiss: true,
-      })
+      alert("Adicione um título para criar a tarefa :)");
     }
   }
 
@@ -54,9 +42,6 @@ export function TaskList() {
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
-
-    // setIsConfirmationModalOpen(true);
-
     const updatedTasks = tasks.filter(task => task.id !== id)
     setTasks(updatedTasks)
   }
@@ -104,14 +89,6 @@ export function TaskList() {
 
         </ul>
       </main>
-
-      {/* {
-        isConfirmationModalOpen &&
-        <ConfirmationModal
-          setIsConfirmationModalOpen={setIsConfirmationModalOpen}
-        />
-      } */}
-
     </section>
 
   )
