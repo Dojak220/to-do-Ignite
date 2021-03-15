@@ -1,10 +1,15 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import React from 'react';
 import { TaskList } from '../../components/TaskList';
+import { ToastProvider } from 'react-toast-notifications'
 
 describe('App Page', () => {
   it('should be able to add a task', async () => {
-    render(<TaskList />);
+    render(
+      <ToastProvider>
+        <TaskList />
+      </ToastProvider>
+    );
 
     const taskInput = screen.getByPlaceholderText('Adicionar novo todo');
     const addTaskButton = screen.getByTestId('add-task-button');
@@ -39,7 +44,11 @@ describe('App Page', () => {
   })
 
   it('should not be able to add a task with a empty title', () => {
-    render(<TaskList />);
+    render(
+      <ToastProvider>
+        <TaskList />
+      </ToastProvider>
+    );
 
     const addTaskButton = screen.getByTestId('add-task-button');
 
@@ -54,7 +63,7 @@ describe('App Page', () => {
         value: 'Desafio ReactJS Ignite'
       }
     });
-    
+
     fireEvent.click(addTaskButton);
 
     const addedFirstTaskTitle = screen.getByText('Desafio ReactJS Ignite');
@@ -63,7 +72,11 @@ describe('App Page', () => {
   })
 
   it('should be able to remove a task', async () => {
-    render(<TaskList />);
+    render(
+      <ToastProvider>
+        <TaskList />
+      </ToastProvider>
+    );
 
     const taskInput = screen.getByPlaceholderText('Adicionar novo todo');
     const addTaskButton = screen.getByTestId('add-task-button');
@@ -97,7 +110,11 @@ describe('App Page', () => {
   })
 
   it('should be able to check a task', () => {
-    render(<TaskList />);
+    render(
+      <ToastProvider>
+        <TaskList />
+      </ToastProvider>
+    );
 
     const taskInput = screen.getByPlaceholderText('Adicionar novo todo');
     const addTaskButton = screen.getByTestId('add-task-button');
