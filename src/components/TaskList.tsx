@@ -35,6 +35,10 @@ export function TaskList() {
 
       setNewTaskTitle("");
 
+      addToast("Nova tarefa adicionada com sucesso", {
+        appearance: 'success',
+        autoDismiss: true,
+      })
     } else {
       addToast("Por favor, coloque um título na tarefa para adicioná-la à lista.", {
         appearance: 'warning',
@@ -50,6 +54,13 @@ export function TaskList() {
 
     updatedTasks[taskIndex] = { ...updatedTasks[taskIndex], isComplete: !updatedTasks[taskIndex].isComplete }
     setTasks(updatedTasks)
+
+    const msg = updatedTasks[taskIndex].isComplete ? "Tarefa concluída" : "Tarefa pendente";
+
+    addToast(msg, {
+      appearance: updatedTasks[taskIndex].isComplete ? 'success' : 'info',
+      autoDismiss: true
+    })
   }
 
   function handleRemoveTask(id: number) {
@@ -59,6 +70,11 @@ export function TaskList() {
 
     const updatedTasks = tasks.filter(task => task.id !== id)
     setTasks(updatedTasks)
+
+    addToast("Tarefa apagada com sucesso", {
+      appearance: 'error', //appearance of error, but meaning of deletion.
+      autoDismiss: true
+    })
   }
 
   return (
