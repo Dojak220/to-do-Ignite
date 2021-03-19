@@ -1,13 +1,13 @@
 <p align="center">
-  <a href="https://github.com/Dojak220/to-do-Ignite/blob/master/public/blue_logo.svg">
-    <img src="https://github.com/Dojak220/to-do-Ignite/blob/master/public/blue_logo.svg" height="150" width="175" alt="Todo" />
+  <a href="https://github.com/Dojak220/to-do-Ignite/blob/master/readme/blue_logo.svg">
+    <img src="https://github.com/Dojak220/to-do-Ignite/blob/master/readme/blue_logo.svg" height="150" width="175" alt="Todo" />
   </a>
 </p>
 
 # to-do-Ignite
 Com essa aplicação, objetiva-se gerenciar atividades a serem realizadas e reforçar alguns dos conceitos básicos do React.
 
-![todoApp](todoApp.png)
+![todoApp](https://github.com/Dojak220/to-do-Ignite/blob/master/readme/todoApp.png)
 
 ## Acesse
 
