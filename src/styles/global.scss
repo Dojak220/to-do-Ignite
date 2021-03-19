@@ -1,5 +1,6 @@
 :root {
   --blue: #273FAD;
+  --light-blue: #273fad2e;
   --green: #3FAD27;
   --red: 	#ad273f;
   --background: #EBEBEB;
@@ -18,6 +19,7 @@
 body {
   font: 16px "Poppins", Arial, sans-serif;
   color: #121214;
+  background-color: var(--light-blue);
 }
 
 input, textarea {
