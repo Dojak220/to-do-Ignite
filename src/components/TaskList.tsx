@@ -68,12 +68,21 @@ export function TaskList() {
 
         <div className="input-group">
           <input
+            id="new-task-input"
             type="text"
             placeholder="Adicionar novo todo"
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
-          <button type="submit" data-testid="add-task-button" onClick={handleCreateNewTask}>
+          <button
+            id="new-task-button"
+            type="submit"
+            data-testid="add-task-button"
+            onClick={() => {
+              document.getElementById("new-task-input")?.focus();
+              handleCreateNewTask();
+            }}
+          >
             <FiCheckSquare size={16} color="#fff" />
           </button>
         </div>
