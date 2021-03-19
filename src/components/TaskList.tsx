@@ -27,7 +27,7 @@ export function TaskList() {
       setNewTaskTitle("");
 
     } else {
-      alert("Adicione um título para criar a tarefa :)");
+      window.alert("Adicione um título para criar a tarefa :)");
     }
   }
 
