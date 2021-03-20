@@ -16,7 +16,14 @@ Com essa aplicação, objetiva-se gerenciar atividades a serem realizadas e refo
 
 ## Exemplos de uso
 
-Para ver os exemplos de uso, acesse a branch [master](https://github.com/Dojak220/to-do-Ignite) da aplicação.
+Para adicionar uma tarefa, basta digitar o título dela no campo de texto e clicar no botão verde ao lado dele para confirmar:
+![adicionar_tarefa](https://github.com/Dojak220/to-do-Ignite/blob/master/readme/adicionar_tarefa.png)
+
+Para concluir uma tarefa, basta clicar na caixa vazia ao lado esquerdo da tarefa desejada:
+![tarefa_concluida](https://github.com/Dojak220/to-do-Ignite/blob/master/readme/tarefa_concluida.png)
+
+Para apagar uma tarefa, basta clicar no ícone da lixeira vermelha ao lado direito da tarefa desejada:
+![tarefa_apagada](https://github.com/Dojak220/to-do-Ignite/blob/master/readme/tarefa_apagada.png)
 
 ## Setup para desenvolvimento
 

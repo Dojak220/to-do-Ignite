@@ -26,6 +26,10 @@ export function TaskList() {
       setTasks([...tasks, newTask]);
       setNewTaskTitle("");
 
+      addToast("Nova tarefa adicionada com sucesso", {
+        appearance: 'success',
+        autoDismiss: true,
+      })
     } else {
       window.alert("Adicione um título para criar a tarefa :)");
     }
@@ -38,12 +42,24 @@ export function TaskList() {
 
     updatedTasks[taskIndex] = { ...updatedTasks[taskIndex], isComplete: !updatedTasks[taskIndex].isComplete }
     setTasks(updatedTasks)
+
+    const msg = updatedTasks[taskIndex].isComplete ? "Tarefa concluída" : "Tarefa pendente";
+
+    addToast(msg, {
+      appearance: updatedTasks[taskIndex].isComplete ? 'success' : 'info',
+      autoDismiss: true
+    })
   }
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
     const updatedTasks = tasks.filter(task => task.id !== id)
     setTasks(updatedTasks)
+
+    addToast("Tarefa apagada com sucesso", {
+      appearance: 'error', //appearance of error, but meaning of deletion.
+      autoDismiss: true
+    })
   }
 
   return (
@@ -53,12 +69,21 @@ export function TaskList() {
 
         <div className="input-group">
           <input
+            id="new-task-input"
             type="text"
             placeholder="Adicionar novo todo"
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
-          <button type="submit" data-testid="add-task-button" onClick={handleCreateNewTask}>
+          <button
+            id="new-task-button"
+            type="submit"
+            data-testid="add-task-button"
+            onClick={() => {
+              document.getElementById("new-task-input")?.focus();
+              handleCreateNewTask();
+            }}
+          >
             <FiCheckSquare size={16} color="#fff" />
           </button>
         </div>
