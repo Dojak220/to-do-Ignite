@@ -1,13 +1,9 @@
 import { useState } from "react"
-import { useToasts } from 'react-toast-notifications'
-
 
 import "../styles/tasklist.scss"
 
 import { FiTrash, FiCheckSquare } from "react-icons/fi"
 // import { ConfirmationModal } from "./ConfirmationModal";
-
-
 
 interface Task {
   id: number;
@@ -19,8 +15,6 @@ export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState("");
   // const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
-
-  const { addToast } = useToasts()
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
@@ -35,15 +29,8 @@ export function TaskList() {
 
       setNewTaskTitle("");
 
-      addToast("Nova tarefa adicionada com sucesso", {
-        appearance: 'success',
-        autoDismiss: true,
-      })
     } else {
-      addToast("Por favor, coloque um título na tarefa para adicioná-la à lista.", {
-        appearance: 'warning',
-        autoDismiss: true,
-      })
+      window.alert("Por favor, coloque um título na tarefa para adicioná-la à lista.");
     }
   }
 
@@ -54,13 +41,6 @@ export function TaskList() {
 
     updatedTasks[taskIndex] = { ...updatedTasks[taskIndex], isComplete: !updatedTasks[taskIndex].isComplete }
     setTasks(updatedTasks)
-
-    const msg = updatedTasks[taskIndex].isComplete ? "Tarefa concluída" : "Tarefa pendente";
-
-    addToast(msg, {
-      appearance: updatedTasks[taskIndex].isComplete ? 'success' : 'info',
-      autoDismiss: true
-    })
   }
 
   function handleRemoveTask(id: number) {
@@ -70,11 +50,6 @@ export function TaskList() {
 
     const updatedTasks = tasks.filter(task => task.id !== id)
     setTasks(updatedTasks)
-
-    addToast("Tarefa apagada com sucesso", {
-      appearance: 'error', //appearance of error, but meaning of deletion.
-      autoDismiss: true
-    })
   }
 
   return (
