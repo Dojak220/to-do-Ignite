@@ -43,7 +43,7 @@ Para apagar uma tarefa, basta clicar no ícone da lixeira vermelha ao lado direi
       yarn dev
       ```
 
-## Meta
+## Informações
 
 Feito por: Dorgival Rocha | 
 [![LinkedIn Bagde](https://img.shields.io/badge/-Dorgival%20Rocha-0077B5?style=flat-square&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/dorgivalrocha/)](https://www.linkedin.com/in/dorgivalrocha/)
