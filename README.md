@@ -33,8 +33,8 @@ Para apagar uma tarefa, basta clicar no ícone da lixeira vermelha ao lado direi
     
     2.1) Para baixar/clonar o repositório em seu computador:
       ```sh
-      yarn install
-      yarn dev
+      git clone https://github.com/Dojak220/to-do-Ignite.git
+      cd to-do-Ignite
       ```
       
     2.2) Para instalar as dependências e rodar o app:
